@@ -1,17 +1,14 @@
 #! /bin/bash
-echo "" >> myScript.html
-echo "Hello $USER!" >> myScript.html
-echo "" >> myScript.html
-echo "What's the root structure?" >> myScript.html
+echo "Hello $USER!<br>" >> myScript.html
+echo "What's the root structure?<br>" >> myScript.html
 pwd >> myScript.html
-echo " " >> myScript.html
-echo $"What's inside Lamp?" >> myScript.html
+echo "<br>What's inside Lamp?<br>" >> myScript.html
 ls >> myScript.html
-echo "" >> myScript.html
-echo "What's inside TestAutomation?" >> myScript.html
-cd TestAutomation >> myScript.html
+echo "<br>" >> myScript.html
+echo "<br>What's inside TestAutomation?<br>" >> myScript.html
+cd TestAutomation
 ls >> myScript.html
-echo "" >> myScript.html
-cd .. >> myScript.html
+cd ..
 open myScript.html
+
 exit 0
