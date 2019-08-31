@@ -1,7 +1,8 @@
 #! /bin/bash
 
 # <br> is inserted to create a new line in html
-# command >> file where result of command is stored
+# command > file (this will overwrite whatever is in the file with the output of the command)
+# command >> file (this will append the output of the command to the file)
 
 # saying hello to the root user profile
 echo "Hello $USER!<br>" > myScript.html
