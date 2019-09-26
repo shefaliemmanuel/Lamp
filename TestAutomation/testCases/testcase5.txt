@@ -1,6 +1,6 @@
-test number or ID
-requirement being tested
-component being tested
-method being tested
-test input(s) including command-line argument(s)
-expected outcome(s)
+Test #5
+requirement being tested: int kg
+component being tested: 
+method being tested: kgToLb(int kg)
+test input(s) including command-line argument(s): 1500
+expected outcome: 3306.934
