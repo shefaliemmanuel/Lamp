@@ -4,7 +4,7 @@
 
 glucosio-android/app/src/main/java/org/glucosio/android/tools/GlucosioConverter.java
 
-kgToLb(int kg)
+kgToLb()
 
 100
 
