@@ -1,6 +1,11 @@
-Test #4
-requirement being tested: int kg
-component being tested: glucosio-android -> app -> src -> main -> java -> org -> glucosio -> android -> tools -> GlucosioConverter.java
-method being tested: kgToLb(int kg)
-test input(s) including command-line argument(s): 100
-expected outcome: 220.462
+4
+
+# When the input is 99< the output should result in 99< as well.
+
+glucosio-android/app/src/main/java/org/glucosio/android/tools/GlucosioConverter.java
+
+kgToLb(int kg)
+
+100
+
+220.462
