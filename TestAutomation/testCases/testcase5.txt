@@ -1,11 +1,11 @@
 5
 
-# When the input is 1500< the output should result in 1500< as well.
+# Positive Cases 
 
-glucosio-android/app/src/main/java/org/glucosio/android/tools/GlucosioConverter.java
+glucosio-android/app/src/main/java/org/glucosio/android/tools/InputFilterMinMax.java
 
-kgToLb()
+isInRange()
 
-1500
+2 3 1
 
-3306.934
+false

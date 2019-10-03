@@ -1,11 +1,11 @@
 4
 
-# When the input is 99< the output should result in 99< as well.
+# Positive Cases 
 
-glucosio-android/app/src/main/java/org/glucosio/android/tools/GlucosioConverter.java
+glucosio-android/app/src/main/java/org/glucosio/android/tools/InputFilterMinMax.java
 
-kgToLb()
+isInRange()
 
-100
+3 1 2
 
-220.462
+false
