@@ -1,0 +1,11 @@
+11
+
+# Negative Cases 
+
+glucosio-android/app/src/main/java/org/glucosio/android/tools/InputFilterMinMax.java
+
+isInRange()
+
+-3 -2 -1
+
+false
