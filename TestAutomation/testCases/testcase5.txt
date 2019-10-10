@@ -1,6 +1,6 @@
-1
+5
 
-kgToLb()
+lbToKg()
 
 0.0
 
