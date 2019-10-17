@@ -1,8 +1,8 @@
-Test Case Number:  2
+Test Case Number:  4
 
 Method Signature:  kgToLb()
 
-Input Value:  NULL
+Input Value:  -2.20462
 
-Expected Output:  NULL
+Expected Output:  -1.0
 

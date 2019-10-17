@@ -1,10 +1,3 @@
 1,kgToLb(),0.0
-1,kgToLb(),0.0
-1,kgToLb(),0.0
-1,kgToLb(),0.0
-1,kgToLb(),0.0
-1,kgToLb(),0.0
-1,kgToLb(),0.0
-1,kgToLb(),0.0
-1,kgToLb(),0.0
+4,kgToLb(),-1.0
 3,kgToLb(),1.0
