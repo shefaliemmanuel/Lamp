@@ -6,7 +6,7 @@ import java.lang.reflect.Method;
 
 
 
-public class Driver {
+public class driver1 {
     public static void main(String[] args) throws Exception {
         double input1;
         if(args.length >0 ){
