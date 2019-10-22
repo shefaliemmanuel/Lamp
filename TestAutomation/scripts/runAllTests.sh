@@ -16,25 +16,25 @@ rm ./reports/output.txt
 cd scripts
 
 cd ../testCases
-for i in $(seq 1 15); do 
+for i in $(seq 1 17); do 
 
     #parse text file to save variables and display oracle
     #rm command will remove current info from file before adding new
     rm sampletest$i.txt 2>/dev/null
 
     FIRSTLINE=`sed -n 1p testcase$i.txt`
-    echo "Test Case Number: " $FIRSTLINE$'\n' >> sampletest$i.txt
+    #echo "Test Case Number: " $FIRSTLINE$'\n' >> sampletest$i.txt
 
 
     SECONDLINE=`sed -n 3p testcase$i.txt`
-    echo "Method Signature: " $SECONDLINE$'\n' >> sampletest$i.txt
+    #echo "Method Signature: " $SECONDLINE$'\n' >> sampletest$i.txt
 
     THIRDLINE=`sed -n 5p testcase$i.txt`
-    echo "Input Value: " $THIRDLINE$'\n' >> sampletest$i.txt
+    #echo "Input Value: " $THIRDLINE$'\n' >> sampletest$i.txt
 
 
     FOURTHLINE=`sed -n 7p testcase$i.txt`
-    echo "Expected Output: " $FOURTHLINE$'\n' >> sampletest$i.txt
+    #echo "Expected Output: " $FOURTHLINE$'\n' >> sampletest$i.txt
    
     cd ../testCasesExecutables 
     #copy driver$i.java to correct project location prior to compiling
@@ -57,10 +57,12 @@ for i in $(seq 1 15); do
     #pass in method name and input commands to corresponding driver
     #sends output to the reports folder (final file name not identified)
     #SECONDLINE is method signature, THIRDLINE is input value
-    java -cp . org.glucosio.android.tools.Driver$i "$FIRSTLINE" "$SECONDLINE" "$THIRDLINE" >> ../../../../../../reports/output.txt
+    #java -cp . org.glucosio.android.tools.Driver$i "$FIRSTLINE" "$SECONDLINE" "$THIRDLINE" >> ../../../../../../reports/output.txt
     
-    ##outputtest="$(java -cp .org.glucosio.android.tools.driver$i "$FIRSTLINE" "$SECONDLINE" "$THIRDLINE")"
-
+    #Saves the output of the Driver to outputtest variable.
+    outputtest="$(java -cp . org.glucosio.android.tools.Driver$i "$FIRSTLINE" "$SECONDLINE" "$THIRDLINE" 2>&1)"
+    
+    echo ${outputtest}
     #navigate back to scripts folder
     cd ../../../../../../testCases
        
