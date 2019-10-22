@@ -10,10 +10,13 @@
 #java -cp .org.glucosio.android.tools.Driver'input X input Y input Z'
 
 #gradle build
+rm ./reports/output.txt
 
 #loop to process all test files
+cd scripts
+
 cd ../testCases
-for i in $(seq 1 3); do 
+for i in $(seq 1 15); do 
 
     #parse text file to save variables and display oracle
     #rm command will remove current info from file before adding new
@@ -36,13 +39,13 @@ for i in $(seq 1 3); do
     cd ../testCasesExecutables 
     #copy driver$i.java to correct project location prior to compiling
     
-    cp driver$i.java ../project/android/app/src/main/java/org/glucosio/android/tools
+    cp Driver$i.java ../project/android/app/src/main/java/org/glucosio/android/tools
     #compile driver & compile the .java file that contains the method we want to test this case
     
     PWD="$(pwd)"
     #javac -cp ${PWD}/project/android/app/src/main/java/org/glucosio/android/tools project/android/app/src/main/java/org/glucosio/android/tools/driver$i.java project/android/app/src/main/java/org/glucosio/android/tools/GlucosioConverter.java
     cd ..
-    javac ./project/android/app/src/main/java/org/glucosio/android/tools/driver$i.java ./project/android/app/src/main/java/org/glucosio/android/tools/GlucosioConverter.java
+    javac ./project/android/app/src/main/java/org/glucosio/android/tools/Driver$i.java ./project/android/app/src/main/java/org/glucosio/android/tools/GlucosioConverter.java
     ## this requires navigation to the appropriate directory to function. Above command will execute properly.
     #javac driver$i.java GlucosioConverter.java
     
@@ -54,7 +57,9 @@ for i in $(seq 1 3); do
     #pass in method name and input commands to corresponding driver
     #sends output to the reports folder (final file name not identified)
     #SECONDLINE is method signature, THIRDLINE is input value
-    java -cp . org.glucosio.android.tools.driver$i "$FIRSTLINE" "$SECONDLINE" "$THIRDLINE" >> ../../../../../../reports/output.txt
+    java -cp . org.glucosio.android.tools.Driver$i "$FIRSTLINE" "$SECONDLINE" "$THIRDLINE" >> ../../../../../../reports/output.txt
+    
+    ##outputtest="$(java -cp .org.glucosio.android.tools.driver$i "$FIRSTLINE" "$SECONDLINE" "$THIRDLINE")"
 
     #navigate back to scripts folder
     cd ../../../../../../testCases

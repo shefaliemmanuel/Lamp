@@ -1,3 +1,11 @@
 1,kgToLb(),0.0
-4,kgToLb(),-1.0
+2,kgToLb(),-1.0
 3,kgToLb(),1.0
+5,lbToKg(),0.0
+7,lbToKg(),0.45359290943563974
+8,lbToKg(),-0.45359290943563974
+9,a1cToGlucose(),1.63
+11,a1cToGlucose(),1.0
+12,a1cToGlucose(),-1.0
+13,a1cToGlucose(),10.0
+14,glucoseToA1C(),1.63

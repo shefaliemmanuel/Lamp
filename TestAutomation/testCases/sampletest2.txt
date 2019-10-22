@@ -1,8 +1,0 @@
-Test Case Number:  4
-
-Method Signature:  kgToLb()
-
-Input Value:  -2.20462
-
-Expected Output:  -1.0
-
