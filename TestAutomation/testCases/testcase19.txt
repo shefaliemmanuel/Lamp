@@ -1,0 +1,7 @@
+19
+
+glucoseToMmolL()
+
+5.5
+
+100.0
