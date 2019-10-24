@@ -10,7 +10,7 @@ public class Driver4 {
     public static void main(String[] args) throws Exception {
         double input1;
         if(args.length >0 ){
-            System.out.printf("%s,%s,%s\n",args[0],args[1],lbToKgTest(Double.parseDouble(args[2])));
+            System.out.printf("%s\n",lbToKgTest(Double.parseDouble(args[2])));
         }
     }
 
@@ -20,7 +20,7 @@ public class Driver4 {
         Class testCls = testObj.getClass();
         try {
             Method lbToKgMethod = testCls.getDeclaredMethod("lbToKg", double.class);
-            lbToKgMethod.setAccessible(true);
+            kgToLbMethod.setAccessible(true);
             Object lbToKgTestObj = lbToKgMethod.invoke(testObj, lb);
 //            System.out.printf("test results are: %s\n", lbToKgTestObj);
             String results = lbToKgTestObj.toString();

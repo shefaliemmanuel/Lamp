@@ -10,7 +10,7 @@ public class Driver5 {
     public static void main(String[] args) throws Exception {
         double input1;
         if(args.length >0 ){
-            System.out.printf("%s,%s,%s\n",args[0],args[1],lbToKgTest(Double.parseDouble(args[2])));
+        	System.out.printf("%s\n",lbToKgTest(Double.parseDouble(args[2])));
         }
     }
 

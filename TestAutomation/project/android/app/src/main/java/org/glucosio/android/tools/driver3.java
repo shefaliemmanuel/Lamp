@@ -10,20 +10,20 @@ public class Driver3 {
     public static void main(String[] args) throws Exception {
         double input1;
         if(args.length >0 ){
-            System.out.printf("%s,%s,%s\n",args[0],args[1],lbToKgTest(Double.parseDouble(args[2])));
+            System.out.printf("%s\n",kgToLbTest(Double.parseDouble(args[2])));
         }
     }
 
 
-    public static String lbToKgTest(double lb) throws Exception {
+    public static String kgToLbTest(double lb) throws Exception {
         GlucosioConverter testObj = new GlucosioConverter();
         Class testCls = testObj.getClass();
         try {
-            Method lbToKgMethod = testCls.getDeclaredMethod("lbToKg", double.class);
-            lbToKgMethod.setAccessible(true);
-            Object lbToKgTestObj = lbToKgMethod.invoke(testObj, lb);
+            Method kgToLbMethod = testCls.getDeclaredMethod("kgToLb", double.class);
+            kgToLbMethod.setAccessible(true);
+            Object kgToLbTestObj = kgToLbMethod.invoke(testObj, lb);
 //            System.out.printf("test results are: %s\n", lbToKgTestObj);
-            String results = lbToKgTestObj.toString();
+            String results = kgToLbTestObj.toString();
             return results;
         } catch (Exception ex) {
             ex.printStackTrace();
