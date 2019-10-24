@@ -20,7 +20,7 @@ public class Driver4 {
         Class testCls = testObj.getClass();
         try {
             Method lbToKgMethod = testCls.getDeclaredMethod("lbToKg", double.class);
-            kgToLbMethod.setAccessible(true);
+            lbToKgMethod.setAccessible(true);
             Object lbToKgTestObj = lbToKgMethod.invoke(testObj, lb);
 //            System.out.printf("test results are: %s\n", lbToKgTestObj);
             String results = lbToKgTestObj.toString();
