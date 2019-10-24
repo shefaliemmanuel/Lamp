@@ -10,7 +10,7 @@
 #java -cp .org.glucosio.android.tools.Driver'input X input Y input Z'
 
 #gradle build
-rm ./reports/output.txt
+rm ./testCases/testing.html
 
 
 wordCount=0;
@@ -71,11 +71,13 @@ for i in $(seq 1 17); do
     cd ../../../../../../testCases
        
     #display actual
-    printf "\n" > testing.html
-    echo "Test Number: "$TESTNO$'\n'
-    echo "Method: "$METHODNAME$'\n'
-    echo "Expected Output: "$outValue$'\n'
-    echo "Input: "$InValue$'\n'
+    
+    #printf "\n"
+    #echo "Test Number: "$TESTNO
+    #echo -e '\t'
+    #echo -e "Method: "$METHODNAME$'\t' 
+    #echo -e "Expected Output: "$outValue$'\t'
+    #echo "Input: "$InValue$'\n'
 
     
     #echo "Actual Test File Contains:  "$outputtest$'\n'
@@ -86,13 +88,13 @@ for i in $(seq 1 17); do
   #echo "Word Found: $actualValue"
     
   #if [[ "$wordCount" -eq "1" ]]; then
-   echo "Actual Output: "$outputtest$'\n'
+   #echo "Actual Output: "$outputtest$'\n'
      if [[ "$outputtest" == "$outValue" ]]; then
-	
-        echo "TEST NUMBER "$TESTNO$": PASSED"$'\n'
+	echo -e $TESTNO$"\t\t"$METHODNAME$"\t\t"$outValue$"\t\t"$InValue$"\t\tPASSED\n" >> testing.html
+        echo "<br>" >> testing.html
      else
-	
-        echo "TEST NUMBER "$TESTNO$": FAILED"$'\n'
+	echo -e $TESTNO$"\t\t"$METHODNAME$"\t\t"$outValue$"\t\t"$InValue$"\t\tFAILED\n" >> testing.html
+        echo "<br>" >> testing.html
      fi
   #else
    #echo "Word Count is not equal to hardcoded value 3"$'\n'
@@ -109,4 +111,4 @@ done
     cd ../scripts
     #open web browser with final expected and actual output
 
-#open ./testing.html
+#xdg-open ./testing.html
