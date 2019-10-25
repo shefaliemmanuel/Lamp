@@ -71,6 +71,6 @@ allprojects {
 
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = versions.gradle
-}
+/*task wrapper(type: Wrapper) {
+ *   gradleVersion = versions.gradle
+*/}
