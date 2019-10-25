@@ -16,9 +16,11 @@ public class Driver17 {
 
 
     public static String glucoseToA1CTest(double mgDl) throws Exception {
-        GlucosioConverter testObj = new GlucosioConverter();
+    	
+    	GlucosioConverter testObj = new GlucosioConverter();
         Class testCls = testObj.getClass();
         try {
+        	@SuppressWarnings("unchecked")
             Method glucoseToA1CMethod = testCls.getDeclaredMethod("glucoseToA1C", double.class);
             glucoseToA1CMethod.setAccessible(true);
             Object glucoseToA1CTestObj = glucoseToA1CMethod.invoke(testObj, mgDl);

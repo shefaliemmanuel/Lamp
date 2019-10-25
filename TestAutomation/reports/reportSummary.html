@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table{
+  width:100%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+}
+table#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+ background-color: #fff;
+}
+table#t01 th {
+  background-color: #4682B4;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<table style="width:100%">
+<table id="t01">
+<tr>
+	<th>Test Number</th>
+	<th>Method Name</th>
+	<th>Output Value</th>
+	<th>Input Value</th>
+	<th>Result</th>
+</tr>
+
+
+<tr><td>1</td><td>kgToLb()</td><td>0.0</td><td>0.0</td><td>PASSED</td></tr>
+<tr><td>2</td><td>kgToLb()</td><td>2.20462</td><td>1.0</td><td>PASSED</td></tr>
+<tr><td>3</td><td>kgToLb()</td><td>-2.20462</td><td>-1.0</td><td>PASSED</td></tr>
+<tr><td>4</td><td>lbToKg()</td><td>0.0</td><td>0.0</td><td>PASSED</td></tr>
+<tr><td>5</td><td>lbToKg()</td><td>1.0</td><td>2.20462</td><td>PASSED</td></tr>
+<tr><td>6</td><td>lbToKg()</td><td>-1.0</td><td>-2.20462</td><td>PASSED</td></tr>
+<tr><td>7</td><td>lbToKg()</td><td>1.0</td><td>2.20462</td><td>PASSED</td></tr>
+<tr><td>8</td><td>lbToKg()</td><td>-1.0</td><td>-2.20462</td><td>PASSED</td></tr>
+<tr><td>9</td><td>a1cToGlucose()</td><td>-46.7</td><td>0.0</td><td>PASSED</td></tr>
+<tr><td>10</td><td>a1cToGlucose()</td><td>286999953.3</td><td>10000000.0</td><td>FAILED</td></tr>
+<tr><td>11</td><td>a1cToGlucose()</td><td>-18.0</td><td>1.0</td><td>PASSED</td></tr>
+<tr><td>12</td><td>a1cToGlucose()</td><td>-75.4</td><td>-1.0</td><td>PASSED</td></tr>
+<tr><td>13</td><td>a1cToGlucose()</td><td>240.3</td><td>10.0</td><td>PASSED</td></tr>
+<tr><td>14</td><td>glucoseToA1C()</td><td>1.63</td><td>0.0</td><td>PASSED</td></tr>
+<tr><td>15</td><td>glucoseToA1C()</td><td>1.66</td><td>1.0</td><td>PASSED</td></tr>
+<tr><td>16</td><td>glucoseToA1C()</td><td>1.59</td><td>-1.0</td><td>PASSED</td></tr>
+<tr><td>17</td><td>glucoseToA1C()</td><td>1.98</td><td>10.0</td><td>PASSED</td></tr>
+</table></body></html>

@@ -16,9 +16,11 @@ public class Driver2 {
 
 
     public static String kgToLbTest(double lb) throws Exception {
-        GlucosioConverter testObj = new GlucosioConverter();
+    	
+    	GlucosioConverter testObj = new GlucosioConverter();
         Class testCls = testObj.getClass();
         try {
+        	@SuppressWarnings("unchecked")
             Method kgToLbMethod = testCls.getDeclaredMethod("kgToLb", double.class);
             kgToLbMethod.setAccessible(true);
             Object kgToLbTestObj = kgToLbMethod.invoke(testObj, lb);
