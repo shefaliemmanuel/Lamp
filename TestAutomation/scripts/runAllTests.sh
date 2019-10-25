@@ -73,5 +73,5 @@ echo "</table></body></html>" >> ../reports/reportSummary.html
 
 #open web browser with final expected and actual output
 
-xdg-open ./reprots/reportSummary.html
+xdg-open ./reports/reportSummary.html
 
