@@ -2,6 +2,6 @@
 
 glucoseToMmolL()
 
-5.5
+5.56
 
 100.0

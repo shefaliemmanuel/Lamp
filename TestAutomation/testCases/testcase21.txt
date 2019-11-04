@@ -2,6 +2,6 @@
 
 glucoseToMgDl()
 
-180
+180.0
 
 10.0
