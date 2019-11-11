@@ -10,7 +10,7 @@ public class a1cToGlucoseDriver {
     public static void main(String[] args) throws Exception {
         double input1;
         if(args.length >0 ){
-        	System.out.printf("%s\n",a1cToGlucoseTest(Double.parseDouble(args[2])));
+        	System.out.printf("%.1f\n",Double.parseDouble(a1cToGlucoseTest(Double.parseDouble(args[2]))));
         }
     }
 
