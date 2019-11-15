@@ -1,4 +1,9 @@
 #!/bin/bash
+#Team: Jason Adler, Shefali Emmanuel
+#Script used to test Glucosio application
+#Scans testCases folder for all text files to create inputs for tests
+#Output results to reports folder in an HTML document
+
 
 #Date stored to use for reportSummary output
 todaysDate=`date +%Y-%m-%d.%H:%M:%S`
@@ -53,11 +58,6 @@ do
 	cd project/android/app/src/main/java
 
 	outputTest="$(java -cp . org.glucosio.android.tools.${DriverName//.java} "$TESTNO" "$METHODNAME" "$InValue" 2>&1)"
-
-	##remove java and class files? May do at end
-	#rm ./org/glucosio/android/tools/$DriverName ./org/glucosio/android/tools/${DriverName//.java/.class}
-
-
 
 	cd ../../../../../../testCases
 
