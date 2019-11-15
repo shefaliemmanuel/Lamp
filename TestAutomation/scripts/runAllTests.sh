@@ -17,7 +17,7 @@ cp ./testCases/reportSummaryTemplate.html ./reports/reportSummary$todaysDate.htm
 cd testCasesExecutables
 
 #Copy all method drivers from executables folder to appropriate project folder 
-cp kgToLbDriver.java a1CToGlucoseDriver.java glucoseToA1CDriver.java glucoseToMmolLDriver.java glucoseToMgDlDriver.java lbToKgDriver.java .$TOOLSPATH
+cp kgToLbDriver.java a1cToGlucoseDriver.java glucoseToA1CDriver.java glucoseToMmolLDriver.java glucoseToMgDlDriver.java lbToKgDriver.java .$TOOLSPATH
 
 cd ..
 
