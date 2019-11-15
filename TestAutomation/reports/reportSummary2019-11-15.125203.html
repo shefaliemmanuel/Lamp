@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table{
+  width:100%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+}
+table#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+ background-color: #fff;
+}
+table#t01 th {
+  background-color: #4682B4;
+  color: white;
+}
+</style>
+</head>
+<script>
+        function sortTable(n) {
+          var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+          table = document.getElementById("t01");
+          switching = true;
+          // Set the sorting direction to ascending:
+          dir = "asc";
+          /* Make a loop that will continue until
+          no switching has been done: */
+          while (switching) {
+            // Start by saying: no switching is done:
+            switching = false;
+            rows = table.rows;
+            /* Loop through all table rows (except the
+            first, which contains table headers): */
+            for (i = 1; i < (rows.length - 1); i++) {
+              // Start by saying there should be no switching:
+              shouldSwitch = false;
+              /* Get the two elements you want to compare,
+              one from current row and one from the next: */
+              x = rows[i].getElementsByTagName("TD")[n];
+              y = rows[i + 1].getElementsByTagName("TD")[n];
+              /* Check if the two rows should switch place,
+              based on the direction, asc or desc: */
+                if(dir == "asc"){
+                        if(n == 0 ||n == 3 || n == 4|| n == 5){
+                                if(Number(x.innerHTML) > Number(y.innerHTML)){
+                                      shouldSwitch = true;
+                                      break;
+                                }
+                        }
+                        else{
+                                if(x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()){
+                                        shouldSwitch = true;
+                                        break;
+                                }
+                              }
+                              
+                }else if(dir == "desc"){
+                        if(n == 0 ||n == 3 || n == 4|| n == 5){
+                                if(Number(x.innerHTML) < Number(y.innerHTML)){
+                                        shouldSwitch = true;
+                                        break;
+                                }
+                        }
+                        else{
+                                if(x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()){
+                                        shouldSwitch = true;
+                                        break;
+                                }
+                        }
+                }
+        }       
+            if (shouldSwitch) {
+              /* If a switch has been marked, make the switch
+              and mark that a switch has been done: */
+              rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+              switching = true;
+              // Each time a switch is done, increase this count by 1:
+              switchcount ++;
+            } else {
+              /* If no switching has been done AND the direction is "asc",
+              set the direction to "desc" and run the while loop again. */
+              if (switchcount == 0 && dir == "asc") {
+                dir = "desc";
+                switching = true;
+              }
+            }
+          }
+        }
+        
+        
+        
+        
+        </script>
+<body>
+
+<table style="width:100%">
+<table id="t01">
+<tr>
+	<th onclick="sortTable(0)">Test Number</th>
+  <th onclick="sortTable(1)">Method Name</th>
+  <th onclick="sortTable(2)">Requirement</th>
+	<th onclick="sortTable(3)">Input Value</th>
+	<th onclick="sortTable(4)">Output Value</th>
+	<th onclick="sortTable(5)">Oracle</th>
+	<th onclick="sortTable(6)">Result</th>
+</tr>
+
+
+<tr><td>1</td><td>kgToLb()</td><td>Double input converts from kilograms to pounds. Output must also be double. Used in other conversion methods. </td><td>0.0</td><td>0.0</td><td>0.0</td><td>PASSED</td></tr>
+<tr><td>10</td><td>a1cToGlucose()</td><td>Converts from A1C to Glucose. A1C Input, Glucose Output (Double): A1C X 28.7 - 46.7.</td><td>10000000.0</td><td>286999953.3</td><td>286999953.3</td><td>PASSED</td></tr>
+<tr><td>11</td><td>a1cToGlucose()</td><td>Converts from A1C to Glucose. A1C Input, Glucose Output (Double): A1C X 28.7 - 46.7.</td><td>1.0</td><td>-18.0</td><td>-18.0</td><td>PASSED</td></tr>
+<tr><td>12</td><td>a1cToGlucose()</td><td>Converts from A1C to Glucose. A1C Input, Glucose Output (Double): A1C X 28.7 - 46.7.</td><td>-1.0</td><td>-75.4</td><td>-75.4</td><td>PASSED</td></tr>
+<tr><td>13</td><td>a1cToGlucose()</td><td>Converts from A1C to Glucose. A1C Input, Glucose Output (Double): A1C X 28.7 - 46.7.</td><td>10.0</td><td>240.3</td><td>240.3</td><td>PASSED</td></tr>
+<tr><td>14</td><td>glucoseToA1C()</td><td>Converts from Glucose to A1C. Glucose Input, A1C Output (Double): AVG glucose + 46.7 / 28.7.</td><td>0.0</td><td>1.63</td><td>1.63</td><td>PASSED</td></tr>
+<tr><td>15</td><td>glucoseToA1C()</td><td>Converts from Glucose to A1C. Glucose Input, A1C Output (Double): AVG glucose + 46.7 / 28.7.</td><td>1.0</td><td>1.66</td><td>1.66</td><td>PASSED</td></tr>
+<tr><td>16</td><td>glucoseToA1C()</td><td>Converts from Glucose to A1C. Glucose Input, A1C Output (Double): AVG glucose + 46.7 / 28.7.</td><td>-1.0</td><td>1.59</td><td>1.59</td><td>PASSED</td></tr>
+<tr><td>17</td><td>glucoseToA1C()</td><td>Converts from Glucose to A1C. Glucose Input, A1C Output (Double): AVG glucose + 46.7 / 28.7.</td><td>10.0</td><td>1.98</td><td>1.98</td><td>PASSED</td></tr>
+<tr><td>18</td><td>glucoseToMmolL()</td><td>Calculate concentration of glucose. Input(Double): glucose, Output(Double): Millimoles per liter.</td><td>0.0</td><td>0.0</td><td>0.0</td><td>PASSED</td></tr>
+<tr><td>19</td><td>glucoseToMmolL()</td><td>Calculate concentration of glucose. Input(Double): glucose, Output(Double): Millimoles per liter.</td><td>100.0</td><td>5.56</td><td>5.56</td><td>PASSED</td></tr>
+<tr><td>2</td><td>kgToLb()</td><td>Double input converts from kilograms to pounds. Output must also be double. Used in other conversion methods.</td><td>1.0</td><td>2.20462</td><td>2.20462</td><td>PASSED</td></tr>
+<tr><td>20</td><td>glucoseToMmolL()</td><td>Calculate concentration of glucose. Input(Double): glucose, Output(Double): Millimoles per liter.</td><td>-100.0</td><td>-5.56</td><td>-5.56</td><td>PASSED</td></tr>
+<tr><td>21</td><td>glucoseToMgDl()</td><td>Calculate concentration of glucose. Input(Double): glucose, Output(Double): Milligrams per 100 millilitres. </td><td>10.0</td><td>180.0</td><td>180.0</td><td>PASSED</td></tr>
+<tr><td>22</td><td>glucoseToMgDl()</td><td>Calculate concentration of glucose. Input(Double): glucose, Output(Double): Milligrams per 100 millilitres. </td><td>0.0</td><td>0.0</td><td>0.0</td><td>PASSED</td></tr>
+<tr><td>23</td><td>glucoseToMgDl()</td><td>Calculate concentration of glucose. Input(Double): glucose, Output(Double): Milligrams per 100 millilitres. </td><td>100.0</td><td>1800.0</td><td>1800.0</td><td>PASSED</td></tr>
+<tr><td>24</td><td>glucoseToMgDl()</td><td>Calculate concentration of glucose. Input(Double): glucose, Output(Double): Milligrams per 100 millilitres. </td><td>-100.0</td><td>-1800.0</td><td>-1800.0</td><td>PASSED</td></tr>
+<tr><td>25</td><td>glucoseToMgDl()</td><td>Calculate concentration of glucose. Input(Double): glucose, Output(Double): Milligrams per 100 millilitres. </td><td>1000.0</td><td>18000.0</td><td>18000.0</td><td>PASSED</td></tr>
+<tr><td>26</td><td>glucoseToMgDl()</td><td>Calculate concentration of glucose. Input(Double): glucose, Output(Double): Milligrams per 100 millilitres. </td><td>-10000.0</td><td>-180000.0</td><td>-180000</td><td>FAILED</td></tr>
+<tr><td>27</td><td>kgToLb()</td><td>Double input converts from kilograms to pounds. Output must also be double. Used in other conversion methods.</td><td>0.0</td><td>0.0</td><td>44.0</td><td>FAILED</td></tr>
+<tr><td>28</td><td>lbToKg()</td><td>Double input converts from pounds to kilograms. Output must also be double. Used in other conversion methods.</td><td>0.0</td><td>0.0</td><td>55.0</td><td>FAILED</td></tr>
+<tr><td>29</td><td>a1cToGlucose()</td><td>Converts from A1C to Glucose. A1C Input, Glucose Output (Double): A1C X 28.7 - 46.7.</td><td>0.0</td><td>-46.7</td><td>-4.7</td><td>FAILED</td></tr>
+<tr><td>3</td><td>kgToLb()</td><td>Double input converts from kilograms to pounds. Output must also be double. Used in other conversion methods.</td><td>-1.0</td><td>-2.20462</td><td>-2.20462</td><td>PASSED</td></tr>
+<tr><td>30</td><td>glucoseToA1C()</td><td>Converts from Glucose to A1C. Glucose Input, A1C Output (Double): AVG glucose + 46.7 / 28.7.</td><td>0.0</td><td>1.63</td><td>1.653</td><td>FAILED</td></tr>
+<tr><td>31</td><td>glucoseToMgDl()</td><td>Calculate concentration of glucose. Input(Double): glucose, Output(Double): Milligrams per 100 millilitres. </td><td>10.0</td><td>180.0</td><td>18055</td><td>FAILED</td></tr>
+<tr><td>4</td><td>lbToKg()</td><td>Double input converts from pounds to kilograms. Output must also be double. Used in other conversion methods.</td><td>0.0</td><td>0.0</td><td>0.0</td><td>PASSED</td></tr>
+<tr><td>5</td><td>lbToKg()</td><td>Double input converts from pounds to kilograms. Output must also be double. Used in other conversion methods.</td><td>2.20462</td><td>1.0</td><td>1.0</td><td>PASSED</td></tr>
+<tr><td>6</td><td>lbToKg()</td><td>Double input converts from pounds to kilograms. Output must also be double. Used in other conversion methods.</td><td>-2.20462</td><td>-1.0</td><td>-1.0</td><td>PASSED</td></tr>
+<tr><td>7</td><td>lbToKg()</td><td>Double input converts from pounds to kilograms. Output must also be double. Used in other conversion methods.</td><td>2.20462</td><td>1.0</td><td>1.0</td><td>PASSED</td></tr>
+<tr><td>8</td><td>lbToKg()</td><td>Double input converts from pounds to kilograms. Output must also be double. Used in other conversion methods.</td><td>-2.20462</td><td>-1.0</td><td>-1.0</td><td>PASSED</td></tr>
+<tr><td>9</td><td>a1cToGlucose()</td><td>Converts from A1C to Glucose. A1C Input, Glucose Output (Double): A1C X 28.7 - 46.7. </td><td>0.0</td><td>-46.7</td><td>-46.7</td><td>PASSED</td></tr>
+</table></body></html>

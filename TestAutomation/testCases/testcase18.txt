@@ -5,3 +5,5 @@ glucoseToMmolL()
 0.0
 
 0.0
+
+Calculate concentration of glucose. Input(Double): glucose, Output(Double): Millimoles per liter.

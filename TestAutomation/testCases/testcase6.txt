@@ -5,3 +5,5 @@ lbToKg()
 -1.0
 
 -2.20462
+
+Double input converts from pounds to kilograms. Output must also be double. Used in other conversion methods.

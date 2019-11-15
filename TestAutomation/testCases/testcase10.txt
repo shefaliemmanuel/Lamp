@@ -5,3 +5,5 @@ a1cToGlucose()
 286999953.3
 
 10000000.0
+
+Converts from A1C to Glucose. A1C Input, Glucose Output (Double): A1C X 28.7 - 46.7.

@@ -5,3 +5,5 @@ glucoseToA1C()
 1.59
 
 -1.0
+
+Converts from Glucose to A1C. Glucose Input, A1C Output (Double): AVG glucose + 46.7 / 28.7.

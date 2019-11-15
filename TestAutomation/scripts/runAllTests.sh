@@ -41,6 +41,8 @@ do
 
     InValue=`sed -n 7p $TESTNAME`
 
+    REQUIREMENT=`sed -n 9p $TESTNAME`
+
     
 	DriverName="${METHODNAME//()/Driver.java}"
 
@@ -60,9 +62,9 @@ do
 	cd ../../../../../../testCases
 
 	if [[ "$outputTest" == "$outValue" ]]; then
-	echo "<tr><td>"$TESTNO$"</td><td>"$METHODNAME$"</td><td>"$InValue$"</td><td>"$outputTest$"</td><td>"$outValue"</td><td>"PASSED"</td></tr>" >> ../reports/reportSummary$todaysDate.html
+	echo "<tr><td>"$TESTNO$"</td><td>"$METHODNAME$"</td><td>"$REQUIREMENT"</td><td>"$InValue$"</td><td>"$outputTest$"</td><td>"$outValue"</td><td>"PASSED"</td></tr>" >> ../reports/reportSummary$todaysDate.html
      else
-	echo "<tr><td>"$TESTNO$"</td><td>"$METHODNAME$"</td><td>"$InValue$"</td><td>"$outputTest$"</td><td>"$outValue"</td><td>"FAILED"</td></tr>" >> ../reports/reportSummary$todaysDate.html
+	echo "<tr><td>"$TESTNO$"</td><td>"$METHODNAME$"</td><td>"$REQUIREMENT"</td><td>"$InValue$"</td><td>"$outputTest$"</td><td>"$outValue"</td><td>"FAILED"</td></tr>" >> ../reports/reportSummary$todaysDate.html
      fi
 
 

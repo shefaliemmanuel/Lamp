@@ -5,3 +5,5 @@ glucoseToMgDl()
 18055
 
 10.0
+
+Calculate concentration of glucose. Input(Double): glucose, Output(Double): Milligrams per 100 millilitres. 
