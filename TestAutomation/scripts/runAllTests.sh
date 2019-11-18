@@ -5,6 +5,7 @@
 #Output results to reports folder in an HTML document
 
 
+
 #Date stored to use for reportSummary output
 todaysDate=`date +%Y-%m-%d.%H:%M:%S`
 
@@ -14,7 +15,19 @@ TOOLSPATH="./project/android/app/src/main/java/org/glucosio/android/tools/"
 #Create a copy of reportSummaryTemplate.html and name copied file with todays date 
 cp ./testCases/reportSummaryTemplate.html ./reports/reportSummary$todaysDate.html
 
-cd testCasesExecutables
+#Build Glucosio project
+#Create local.properties file using default Android SDK location
+#If script is run with the -b parameter it will build the project.
+if [[ "$1" == "-b" ]]; then 
+	echo "sdk.dir =/home/$USER/Android/Sdk" > project/android/local.properties
+	cd project/android
+	gradle build -x test
+	cd ../../testCasesExecutables
+else
+	cd testCasesExecutables
+fi
+
+#cd testCasesExecutables
 
 #Copy all method drivers from executables folder to appropriate project folder 
 cp kgToLbDriver.java a1cToGlucoseDriver.java glucoseToA1CDriver.java glucoseToMmolLDriver.java glucoseToMgDlDriver.java lbToKgDriver.java .$TOOLSPATH
