@@ -21,9 +21,11 @@ Instruction to create your own test case
   0.0
 
   0.0
+  
+  Requirement
   _______________________
 
-  The file should only contain those four items...the first line is the test number, second line is the method, third line is the expected    output, fourth line is input value.
+  The file should only contain those five items...the first line is the test number, second line is the method, third line is the expected    output, fourth line is input value, fifth line is requirement of method tested.
 
 2) Need to create a driver for the method/test number you are going to test
 3) Our team has written drivers that are functional with specific methods, to use:
